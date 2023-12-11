@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { RiDeleteBin6Line } from "react-icons/ri";
 import '../css/sidebar.css'
 import Sidebar from './Sidebar';
 
@@ -23,16 +24,32 @@ const CreateProject = () => {
     }
   };
 
+  const handleDeleteMember = (index, event) => {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    // Remove the member at the specified index from addedMembers
+    setAddedMembers((prevMembers) => prevMembers.filter((_, i) => i !== index));
+  };
+
   const handleSubmit = () => {
+    // Parse membersRequired as an integer, defaulting to 0 if not a valid number
+    const parsedMembersRequired = parseInt(membersRequired, 10) || 0;
+  
+    // Calculate the total number of required members
+    const totalMembersRequired = addedMembers.length + parsedMembersRequired;
+  
     // Handle form submission with the state values
     console.log('Form submitted:', {
       projectTitle,
       projectType,
       technologyStack,
       description,
-      membersRequired,
+      membersRequired: totalMembersRequired,
+      addedMembers,
     });
   };
+  
+  
   console.log('State:', {
     projectTitle,
     projectType,
@@ -89,14 +106,22 @@ const CreateProject = () => {
         {addedMembers.length > 0 && (
                 <div className="mt-3">
                   <p className="createProjecttext">Added Members:</p>
-                  <ul>
+                  <div>
                     {addedMembers.map((member, index) => (
-                      <li key={index}>{member}</li>
+                      <div key={index} className="d-flex align-items-center">
+                        <span style={{ marginRight: '10px' }}>{index + 1}.</span>
+                        <span>{member}</span>
+                        <RiDeleteBin6Line
+                          className="deleteIcon mx-2 "
+                          style={{ fontSize: 'large', color: '#6319B8' }}
+                          onClick={(e) => handleDeleteMember(index, e)}
+                        />
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
-              {/* ... rest of the form */}
+              {/* ... (rest of the form) */}
         <div className='d-flex justify-content-center align-items-center'>
         <input className=" submitButton mx-5 mt-5 " type="button" value="Submit"
         onClick={handleSubmit}
