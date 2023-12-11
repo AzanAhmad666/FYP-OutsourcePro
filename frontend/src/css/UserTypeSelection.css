@@ -24,6 +24,7 @@
     padding: 8px;
     width:200px;
     transition: all 0.3s;
+    text-decoration: none;
  }
  .box:hover{
     background-color:#cfcad4;

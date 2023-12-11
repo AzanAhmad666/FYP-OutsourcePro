@@ -1,13 +1,20 @@
-
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import UserTypeSelection from './pages/UserTypeSelection';
+
+import CreateProject from './components/CreateProject';
+import UserTypeSelection from './components/UserTypeSelection';
+
 
 function App() {
   return (
     <div className="App">
-      <UserTypeSelection />
+  
+      <Routes>
+              <Route path="/" element={<UserTypeSelection />} />
+              <Route path="/createProject" element={<CreateProject />} />
+            </Routes>
     </div>
   );
 }

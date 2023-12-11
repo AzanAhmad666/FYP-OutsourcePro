@@ -1,7 +1,8 @@
 import React from "react";
-import "./UserTypeSelection.css";
+import '../css/UserTypeSelection.css'
 import { LiaBuildingSolid } from "react-icons/lia";
 import { IoPeopleOutline } from "react-icons/io5";
+import { Link } from 'react-router-dom'; 
 
 const UserTypeSelection = () => {
   return (
@@ -25,12 +26,12 @@ const UserTypeSelection = () => {
           </div>
         </div>
         <div className="col-lg-6 col-sm-12 col-xs-12 col-md-6 col-xl-6 d-flex justify-content-center align-items-center">
-          <div className="box mt-4 ">
+          <Link to="/createProject" className="box mt-4 ">
             <p className="fontcolor pt-2 ">
               <LiaBuildingSolid className="companyIcon mx-4" style={{fontSize:"xx-large"}} />
               Company
             </p>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
