@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { IoIosInformationCircle } from "react-icons/io";
 import '../css/sidebar.css'
 import Sidebar from './Sidebar';
 
@@ -68,31 +69,31 @@ const CreateProject = () => {
         <h1 className="createProjecttext mt-5">Create Project</h1>
       <p className="createProjecttext mt-2">You can create your project here.</p>
       <form>
-        <p className="createProjecttext mt-3">Project title</p>
+        <p className="createProjecttext mt-3"><IoIosInformationCircle className='mx-2 mb-1' style={{fontSize: 'large', color:'#6319B8'}}/>Project title:</p>
         <input className="inputTitle"
         value={projectTitle}
         onChange={(e) => setProjectTitle(e.target.value)}
         />
         
-        <p className="createProjecttext mt-3">Project type</p>
+        <p className="createProjecttext mt-3"><IoIosInformationCircle className='mx-2 mb-1' style={{fontSize: 'large', color:'#6319B8'}}/>Project type:</p>
         <input className="inputTitle"
         value={projectType}
         onChange={(e) => setProjectType(e.target.value)}
         />
         
-        <p className="createProjecttext mt-3">Technology Stack</p>
+        <p className="createProjecttext mt-3"><IoIosInformationCircle className='mx-2 mb-1' style={{fontSize: 'large', color:'#6319B8'}}/>Technology Stack:</p>
         <input className="inputTitle"
         value={technologyStack}
         onChange={(e) => setTechnologyStack(e.target.value)}
         />
         
-        <p className="createProjecttext mt-3">Description</p>
+        <p className="createProjecttext mt-3"><IoIosInformationCircle className='mx-2 mb-1' style={{fontSize: 'large', color:'#6319B8'}}/>Description:</p>
         <textarea className="textArea"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         />
         
-        <p className="createProjecttext mt-3">Members Required</p>
+        <p className="createProjecttext mt-3"><IoIosInformationCircle className='mx-2 mb-1' style={{fontSize: 'large', color:'#6319B8'}}/>Members Required:</p>
         <div className="row">
           <div className="col-sm-12 col-xs-12 col-lg-6 col-md-6 col-xl-6 col-xxl-12 ">
             <input className="inputTitle mt-2"
